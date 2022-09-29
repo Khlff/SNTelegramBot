@@ -8,8 +8,6 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import org.tgbot.handlers.TestHandler;
 
 public class Main extends TelegramLongPollingBot {
-    private static final String LOGTAG = "MAIN";
-
     public static void main(String[] args) throws TelegramApiException {
 
         //ПЕРЕМЕННЫЕ
@@ -24,21 +22,22 @@ public class Main extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
-        @Override
-        public String getBotUsername() {
-            return "DownAlarm";
-            //возвращаем юзера
-        }
 
-        @Override
-        public void onUpdateReceived(Update e) {
-            // Тут будет то, что выполняется при получении сообщения
-        }
+    @Override
+    public String getBotUsername() {
+        return "DownAlarm";
+        //возвращаем юзера
+    }
 
-        @Override
-        public String getBotToken() {
-            return "YOUR_BOT_TOKEN";
-            //Токен бота
-        }
+    @Override
+    public void onUpdateReceived(Update e) {
+        // Тут будет то, что выполняется при получении сообщения
+    }
+
+    @Override
+    public String getBotToken() {
+        return "YOUR_BOT_TOKEN";
+        //Токен бота
+    }
 }
 
