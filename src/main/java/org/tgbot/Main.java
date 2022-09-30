@@ -1,43 +1,17 @@
 package org.tgbot;
 
-import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
-import org.tgbot.handlers.TestHandler;
 
-public class Main extends TelegramLongPollingBot {
-    public static void main(String[] args) throws TelegramApiException {
+public class Main {
 
-        //ПЕРЕМЕННЫЕ
-        String botName = "...";
-        String botToken = "5724149159:AAEQMBUa6mfTPLRPqdJTKiGQybCCJ4qp3QU";
-
-
+    public static void main(String[] args) {
         try {
-            TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            telegramBotsApi.registerBot(new TestHandler());
+            TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+            botsApi.registerBot(new Bot(System.getenv("BOT_NAME"), System.getenv("BOT_TOKEN")));
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
     }
-
-    @Override
-    public String getBotUsername() {
-        return "DownAlarm";
-        //возвращаем юзера
-    }
-
-    @Override
-    public void onUpdateReceived(Update e) {
-        // Тут будет то, что выполняется при получении сообщения
-    }
-
-    @Override
-    public String getBotToken() {
-        return "YOUR_BOT_TOKEN";
-        //Токен бота
-    }
 }
-
