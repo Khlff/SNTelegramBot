@@ -24,7 +24,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
 
         //регистрируем команды
         // register(new StartCommand("start", "Старт"));
-        // register(new HelpCommand("start", "Старт"));
+        // register(new HelpCommand("help", "помощь"));
 
     }
 
