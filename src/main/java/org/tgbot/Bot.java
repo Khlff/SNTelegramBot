@@ -11,6 +11,8 @@ import org.tgbot.handlers.MsgNonCommandHandler;
 public final class Bot extends TelegramLongPollingCommandBot {
     private final String BOT_NAME;
     private final String BOT_TOKEN;
+
+    Boolean status = false;
     //Класс для обработки сообщений, не являющихся командой
     private final MsgNonCommandHandler msgNonCommandHandler;
 
@@ -43,7 +45,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
         Long chatId = msg.getChatId();
         String userName = getUserName(msg);
 
-        String answer = msgNonCommandHandler.nonCommandExecute(chatId, userName, msg.getText());
+        String answer = msgNonCommandHandler.nonCommandExecute(chatId, userName, msg.getText(), status);
         setAnswer(chatId, userName, answer);
     }
 
