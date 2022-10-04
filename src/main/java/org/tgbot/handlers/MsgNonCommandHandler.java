@@ -1,14 +1,14 @@
 package org.tgbot.handlers;
 
-/** Обработка сообщения, не являющегося командой (не с "/") */
+/**
+ * Обработка сообщения, не являющегося командой (не с "/")
+ */
 public class MsgNonCommandHandler {
 
-    public String nonCommandExecute(Long chatId, String userName, String text, Boolean status) {
+    public String nonCommandExecute(Long chatId, String userName, String text) {
         String answer;
         try {
-            if (!status){
-                answer=Math.random()*3;
-            }
+            answer = "Блаблабла";
 
         } catch (Exception e) {
             answer = "что-то пошло не так";
