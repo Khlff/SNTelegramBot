@@ -1,3 +1,5 @@
+package org.tgbot.commands;
+
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.bots.AbsSender;
@@ -5,11 +7,10 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 /**
  * Суперкласс для сервисных команд
- * super - указывает на текущий экземпляр родительского класса
  */
-abstract class CommandService extends BotCommand {
+abstract class ServiceCommand extends BotCommand {
 
-    CommandService(String identifier, String description) {
+    ServiceCommand(String identifier, String description) {
         super(identifier, description);
     }
 

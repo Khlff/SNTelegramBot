@@ -6,6 +6,8 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.tgbot.commands.HelpCommand;
+import org.tgbot.commands.StartCommand;
 import org.tgbot.handlers.MsgNonCommandHandler;
 
 public final class Bot extends TelegramLongPollingCommandBot {
@@ -23,8 +25,8 @@ public final class Bot extends TelegramLongPollingCommandBot {
         this.msgNonCommandHandler = new MsgNonCommandHandler();
 
         //регистрируем команды
-        // register(new StartCommand("start", "Старт"));
-        // register(new HelpCommand("help", "помощь"));
+        register(new StartCommand("start", "Старт"));
+        register(new HelpCommand("help", "помощь"));
 
     }
 
