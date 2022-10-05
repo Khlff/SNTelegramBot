@@ -6,7 +6,7 @@ public class MsgNonCommandHandler {
     public String nonCommandExecute(Long chatId, String userName, String text) {
         String answer;
         try {
-            answer = text;
+            answer = text   ;
 
         } catch (Exception e) {
             answer = "что-то пошло не так";
